@@ -4,6 +4,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Random Password Generator
+ * JavaFX application of a random password generator
+ * Ryan Wagner
+ * 07/10/2021
+ */
+
 public class Main extends Application {
 
 
