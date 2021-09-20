@@ -14,5 +14,6 @@
       </Label>
       <Button fx:id="startButton" layoutX="265.0" layoutY="200.0" mnemonicParsing="false" onAction="#start" prefHeight="50.0" prefWidth="75.0" text="Start" />
       <Button fx:id="tutorialButton" layoutX="265.0" layoutY="275.0" mnemonicParsing="false" onAction="#tutorial" prefHeight="50.0" prefWidth="75.0" text="Tutorial" />
+      <Button fx:id="openFilesButton" layoutX="470.0" layoutY="325.0" mnemonicParsing="false" onAction="#openFiles" prefHeight="50.0" prefWidth="98.0" text="Open Files" />
    </children>
 </Pane>

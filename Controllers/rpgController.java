@@ -7,12 +7,20 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Random;
 
 public class rpgController {
+
+    public static String password = "";
 
     @FXML
     private TextField length;
@@ -21,10 +29,12 @@ public class rpgController {
     private Label passwordLabel;
 
     @FXML
-    private Button backButton;
+    private Button backButton, savePasswordButton;
 
     @FXML
     private RadioButton upperCaseButton, specialCharButton;
+
+    private File file;
 
     private boolean upper = false, special = false;
 
@@ -98,5 +108,18 @@ public class rpgController {
             }
         }
         return password;
+    }
+
+    @FXML
+    public void savePassword(ActionEvent actionEvent) throws Exception{
+        password = passwordLabel.getText();
+        Stage stage = (Stage)savePasswordButton.getScene().getWindow();
+        stage.close();
+        Stage stage2 = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/Scenes/savePassword.fxml"));
+        stage2.setTitle("Save Password");
+        stage2.setScene(new Scene(root, 300, 250));
+        stage2.setResizable(false);
+        stage2.show();
     }
 }

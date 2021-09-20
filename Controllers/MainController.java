@@ -8,13 +8,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.io.File;
 import java.io.IOException;
 
 
 public class MainController {
 
     @FXML
-    private Button startButton, tutorialButton;
+    private Button startButton, tutorialButton, openFileButton;
 
     @FXML
     void start(ActionEvent event) throws Exception {
@@ -37,5 +39,17 @@ public class MainController {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+    }
+
+    @FXML
+    public void openFiles(ActionEvent actionEvent) {
+        File folder = new File("Passwords/");
+        File[] listOfFiles = folder.listFiles();
+
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                System.out.println(file.getName());
+            }
+        }
     }
 }
