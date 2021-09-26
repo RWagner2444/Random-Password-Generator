@@ -31,7 +31,7 @@ public class tutorialController {
         Stage stage2 = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Scenes/Main.fxml"));
         stage2.setTitle("Tutorial");
-        stage2.setScene(new Scene(root, 600, 400));
+        stage2.setScene(new Scene(root, 600, 325));
         stage2.setResizable(false);
         stage2.show();
     }

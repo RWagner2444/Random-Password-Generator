@@ -40,6 +40,8 @@ public class rpgController {
 
     @FXML
     public void generate(ActionEvent actionEvent) {
+        //method for generate button
+        //generates password
         int value = 0;
         try {
             value = Integer.parseInt(length.getText());
@@ -52,18 +54,21 @@ public class rpgController {
 
     @FXML
     public void back(javafx.event.ActionEvent actionEvent) throws Exception{
+        //method for back button
+        //launches Main and closes current scene
         Stage stage = (Stage)backButton.getScene().getWindow();
         stage.close();
         Stage stage2 = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Scenes/Main.fxml"));
         stage2.setTitle("Random Password Generator");
-        stage2.setScene(new Scene(root, 600, 400));
+        stage2.setScene(new Scene(root, 600, 325));
         stage2.setResizable(false);
         stage2.show();
     }
 
     @FXML
     public void upperButtonClick(ActionEvent actionEvent) {
+        //button to select uppercase letters
         if(upper){
             upper = false;
         }
@@ -72,6 +77,7 @@ public class rpgController {
 
     @FXML
     public void specialButtonClick(ActionEvent actionEvent) {
+        //button to select special characters
         if(special){
             special = false;
         }
@@ -79,6 +85,7 @@ public class rpgController {
     }
 
     public String generatePassword(int length){
+        //method to randomly create password
         Random rand = new Random();
         String password = "";
         String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
@@ -112,6 +119,7 @@ public class rpgController {
 
     @FXML
     public void savePassword(ActionEvent actionEvent) throws Exception{
+        //saves password and launches save password scene
         password = passwordLabel.getText();
         Stage stage = (Stage)savePasswordButton.getScene().getWindow();
         stage.close();

@@ -25,13 +25,15 @@ public class SavePasswordController {
 
     @FXML
     public void savePass(ActionEvent actionEvent) throws IOException {
+        //method for saveButton
+        // saves password and creates new file with user info
         String fileName = "", website = "", username = "";
         if(fileNameTF.getText().equals("")){
             System.out.println("Enter a file name");
             return;
         }
         else{
-            fileName = "Passwords/" + fileNameTF.getText() + ".txt";
+            fileName = fileNameTF.getText() + ".txt";
         }
 
         if(websiteTF.getText().equals("")){
@@ -62,12 +64,14 @@ public class SavePasswordController {
 
     @FXML
     public void back(ActionEvent actionEvent) throws Exception{
+        //method for back button
+        //launches main.fxml and closes current scene
         Stage stage = (Stage)backButton.getScene().getWindow();
         stage.close();
         Stage stage2 = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Scenes/Main.fxml"));
         stage2.setTitle("Random Password Generator");
-        stage2.setScene(new Scene(root, 600, 400));
+        stage2.setScene(new Scene(root, 600, 325));
         stage2.setResizable(false);
         stage2.show();
     }
