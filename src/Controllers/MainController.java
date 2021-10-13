@@ -56,7 +56,7 @@ public class MainController {
         //method for openFilesButton
         //launches finder to see files
         if(Desktop.isDesktopSupported()){
-            Desktop.getDesktop().browse(new File("/Users/ryanwagner/Desktop/Random Password Generator").toURI());
+            Desktop.getDesktop().browse(new File("/Users/ryanwagner/Desktop/Random Password Generator/Passwords").toURI());
         }
     }
 }

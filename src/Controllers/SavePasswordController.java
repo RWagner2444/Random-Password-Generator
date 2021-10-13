@@ -9,9 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 public class SavePasswordController {
 
@@ -28,37 +33,39 @@ public class SavePasswordController {
         //method for saveButton
         // saves password and creates new file with user info
         String fileName = "", website = "", username = "";
-        if(fileNameTF.getText().equals("")){
+        if (fileNameTF.getText().equals("")) {
             System.out.println("Enter a file name");
             return;
-        }
-        else{
-            fileName = fileNameTF.getText() + ".txt";
+        } else {
+            fileName = "Passwords/" + fileNameTF.getText() + ".pdf";
         }
 
-        if(websiteTF.getText().equals("")){
+        if (websiteTF.getText().equals("")) {
             website = "None";
-        }
-        else{
+        } else {
             website = websiteTF.getText();
         }
 
-        if(userNameTF.getText().equals("")){
+        if (userNameTF.getText().equals("")) {
             username = "None";
-        }
-        else{
+        } else {
             username = userNameTF.getText();
         }
 
-        File file = new File(fileName);
-
-        if(!file.exists()){
-            file.createNewFile();
+        //String one = "Whatever you want your pdf password to be";
+        Document document = new Document();
+        try {
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(fileName));
+            writer.setEncryption(one.getBytes(), null, PdfWriter.ALLOW_PRINTING,PdfWriter.ENCRYPTION_AES_128);
+            document.open();
+            document.add(new Paragraph("Website - " + website + "\n\nUsername - " + username + "\n\nPassword - " + password));
+            document.close();
+            writer.close();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-
-        PrintWriter printer = new PrintWriter(file);
-        printer.println("Website - " + website + "\n\nUsername - " + username + "\n\nPassword - " + password);
-        printer.close();
         System.out.println("Done");
     }
 

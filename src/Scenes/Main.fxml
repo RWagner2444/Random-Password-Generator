@@ -32,7 +32,7 @@
             <Font name="Chalkboard" size="60.0" />
          </font>
       </Label>
-      <Button fx:id="openFilesButton" layoutX="425.0" layoutY="200.0" mnemonicParsing="false" onAction="#openFiles" prefHeight="50.0" prefWidth="125.0" text="Open Files" textAlignment="CENTER">
+      <Button fx:id="openFilesButton" layoutX="425.0" layoutY="190.0" mnemonicParsing="false" onAction="#openFiles" prefHeight="75.0" prefWidth="125.0" text="Open Files" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
