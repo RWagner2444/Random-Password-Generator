@@ -12,7 +12,7 @@ public class Main extends Application {
         //starts off in Main.fxml scene
         //launches first stage
         Parent root = FXMLLoader.load(getClass().getResource("Scenes/Main.fxml"));
-        stage.setTitle("Password Generator");
+        stage.setTitle("Locked In");
         stage.setScene(new Scene(root, 600, 325));
         stage.setResizable(false);
         stage.show();

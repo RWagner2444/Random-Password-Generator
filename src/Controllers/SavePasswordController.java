@@ -52,7 +52,7 @@ public class SavePasswordController {
             username = userNameTF.getText();
         }
 
-        //String one = "Whatever you want your pdf password to be";
+        String one = "Freedom22";
         Document document = new Document();
         try {
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(fileName));
@@ -67,6 +67,13 @@ public class SavePasswordController {
             e.printStackTrace();
         }
         System.out.println("Done");
+
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/Scenes/saved.fxml"));
+        stage.setTitle("Saved");
+        stage.setScene(new Scene(root, 250, 150));
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML
@@ -77,7 +84,7 @@ public class SavePasswordController {
         stage.close();
         Stage stage2 = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Scenes/Main.fxml"));
-        stage2.setTitle("Random Password Generator");
+        stage2.setTitle("Locked In");
         stage2.setScene(new Scene(root, 600, 325));
         stage2.setResizable(false);
         stage2.show();

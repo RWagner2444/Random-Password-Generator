@@ -45,7 +45,7 @@ public class MainController {
         Stage stage = (Stage)tutorialButton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/Scenes/tutorial.fxml"));
         Scene scene = new Scene(root, 600, 400);
-        stage.setTitle("Password Generator");
+        stage.setTitle("Tutorial");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

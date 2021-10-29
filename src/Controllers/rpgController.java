@@ -23,13 +23,10 @@ public class rpgController {
     public static String password = "";
 
     @FXML
-    private TextField length;
+    private Label passwordLabel, length;
 
     @FXML
-    private Label passwordLabel;
-
-    @FXML
-    private Button backButton, savePasswordButton;
+    private Button backButton, savePasswordButton, minusButton, plusButton;
 
     @FXML
     private RadioButton upperCaseButton, specialCharButton;
@@ -60,7 +57,7 @@ public class rpgController {
         stage.close();
         Stage stage2 = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Scenes/Main.fxml"));
-        stage2.setTitle("Random Password Generator");
+        stage2.setTitle("Locked In");
         stage2.setScene(new Scene(root, 600, 325));
         stage2.setResizable(false);
         stage2.show();
@@ -126,8 +123,20 @@ public class rpgController {
         Stage stage2 = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Scenes/savePassword.fxml"));
         stage2.setTitle("Save Password");
-        stage2.setScene(new Scene(root, 300, 250));
+        stage2.setScene(new Scene(root, 400, 300));
         stage2.setResizable(false);
         stage2.show();
+    }
+
+    public void minus(ActionEvent actionEvent) {
+        int count = Integer.parseInt(length.getText());
+        count--;
+        length.setText(String.valueOf(count));
+    }
+
+    public void plus(ActionEvent actionEvent) {
+        int count = Integer.parseInt(length.getText());
+        count++;
+        length.setText(String.valueOf(count));
     }
 }

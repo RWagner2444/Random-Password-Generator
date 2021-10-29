@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
    <children>
-      <Label alignment="CENTER" layoutY="-39.0" prefHeight="172.0" prefWidth="600.0" text="Random Password" textOverrun="CENTER_ELLIPSIS">
+      <Label alignment="CENTER" layoutY="-39.0" prefHeight="172.0" prefWidth="600.0" text="Locked In:" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="Chalkboard" size="60.0" />
          </font>
@@ -27,9 +27,9 @@
             <Image url="@../Images/background.png" />
          </image>
       </ImageView>
-      <Label layoutX="163.0" layoutY="65.0" text="Generator">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="74.0" prefHeight="50.0" prefWidth="600.0" text="A Password Generator" textAlignment="CENTER">
          <font>
-            <Font name="Chalkboard" size="60.0" />
+            <Font name="Chalkboard" size="34.0" />
          </font>
       </Label>
       <Button fx:id="openFilesButton" layoutX="425.0" layoutY="190.0" mnemonicParsing="false" onAction="#openFiles" prefHeight="75.0" prefWidth="125.0" text="Open Files" textAlignment="CENTER">
